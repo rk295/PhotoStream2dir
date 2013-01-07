@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>uk.org.riviera.PicturesBackup</string>
+	<key>StartInterval</key>
+	<integer>14400</integer>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/lockrun</string>
+		<string>--lockfile=/Users/robin/tmp/var/backup-pictures.lockrun</string>
+		<string>--</string>
+		<string>/Users/robin/bin/backup-pictures.sh</string>
+	</array>
+</dict>
+</plist>
