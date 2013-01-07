@@ -30,25 +30,24 @@ I currently run this out of [launchd](http://developer.apple.com/library/mac/#do
 
  1. *StartInterval* - in seconds, currently every 4 hours. 
  2. The path to the script. 
- 3. The path to lockrun, or ff you dont use lockrun then simply delete the following three lines:
+ 3. The path to lockrun, or if you dont use lockrun then simply delete the following three lines:
 
      <string>/usr/local/bin/lockrun</string>
      <string>--lockfile=/Users/robin/tmp/var/backup-pictures.lockrun</string>
      <string>--</string>
+
 2. Copy the plist file into ~/Library/LaunchAgents/
 3. Load the new job
-
     
     `% launchctl load -w ~/Library/LaunchAgents/uk.org.riviera.PhotoStream2Dir.plist`
 	
 ## Notes
 
-1. I used to have Aperture enabled to auto-import PhotoStream pics. It has occurred to me that the only reason the files are piling up in the asset dir is because Aperture somehow made that happy. I need to do some more testing on a blank osX account.
+1. I used to have Aperture enabled to auto-import PhotoStream pics. It has occurred to me that the only reason the files are piling up in the asset dir is because Aperture somehow made that happen. I need to do some more testing on a blank osX account to get to the root of what exactly starts making these files arrive in ~/Library....
 
 ## TODO
 
-1. Do something with PNG files, they tend to just be screen shots from iOS devices and as a 
-   result I currently skip over them.
+1. Do something with PNG files, they tend to just be screen shots from iOS devices and as a result I currently skip over them.
 2. Some sort of locking mechanism maybe. Although I currently run under [Lockrun](http://www.unixwiz.net/tools/lockrun.html) 
 
 
