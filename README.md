@@ -53,5 +53,5 @@ I currently run this out of [launchd](http://developer.apple.com/library/mac/#do
 
 
 
-r - 07/01/2013
+r - $Date$
 
