@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>uk.org.riviera.PicturesBackup</string>
+	<string>uk.org.riviera.PhotoStream2Dir</string>
 	<key>StartInterval</key>
 	<integer>14400</integer>
 	<key>ProgramArguments</key>
@@ -11,7 +11,7 @@
 		<string>/usr/local/bin/lockrun</string>
 		<string>--lockfile=/Users/robin/tmp/var/backup-pictures.lockrun</string>
 		<string>--</string>
-		<string>/Users/robin/bin/backup-pictures.sh</string>
+		<string>/Users/robin/bin/Photostream2Dir.pl</string>
 	</array>
 </dict>
 </plist>

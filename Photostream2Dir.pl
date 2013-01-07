@@ -2,28 +2,19 @@
 #
 # $Id$
 #
-# Simple perl script to walk the directory where osX currently saves PhotoStream
-# photos and copy them into a LightRoom auto import watch directory.
+# See the README.md for more details. 
 #
-# Designed to be run from cron or similar to copy any new files from $assetDir
-# into $targetDir, which Lightroom will then process next time it is opened. 
-# Saves state out to a file ($stateFile), which is a hash of the top level directory
-# name and mtime thereof (incase it is useful in the future).  The $assetDir 
-# has the following structure:
+# The most interesting variables are the three at the top:
 #
-# ├── 01227cb0d039e4c9f466dfe2215506d7b831470cef
-# │   └── IMG_7496.JPG
-# ├── 012218e681f20fb9684d33e9780605132a71acdaed
-#     └── IMG_7396.JPG
-# 
-# With a single image in each folder. It is the unique folder names which are saved
-# into the hash.
+# $assetDir  - is the place where iCloud is saving files - shoudn't need changing
+# $stateFile - is where this script dumps state - probably don't want to be chanigng
+#              this after you've started using the script. Killing this file will
+#              cause all files currently cached in $assetDir to be copied to $targetDir
+# $targetDir - Where the images will be copied to.
 #
-# TODO: Do something with PNG files, Lightroom currently doesnt support them, 
-#       they tend to just be screen shots from iOS devices. But maybe out to
-#       do something with them?
+# In all these $ENV{'HOME'} will be expanded to whatever the home account is of the user
+# running the script.
 #
-
 
 use strict;
 
@@ -32,11 +23,13 @@ use File::stat;
 use Storable;
 use File::Copy;
 
-my $DEBUG = 1;
+my $DEBUG = 0; # Set to 1 for some possibly useful output
 
-my $assetDir = "/Users/robin/Library/Application Support/iLifeAssetManagement/assets/sub/";
-my $stateFile = "/Users/robin/.PhotostreamToDir/state";
-my $targetDir = "/Users/robin/Pictures/LightroomWatchDir/";
+### Edit these to suit ###
+my $assetDir = "$ENV{'HOME'}/Library/Application Support/iLifeAssetManagement/assets/sub/";
+my $stateFile = "$ENV{'HOME'}/.PhotostreamToDir/state";
+my $targetDir = "$ENV{'HOME'}/Pictures/LightroomWatchDir/";
+
 my %fileList;
 my @toProcess;
 
