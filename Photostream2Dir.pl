@@ -1,13 +1,11 @@
 #!/usr/bin/perl -w
 #
-# $Id$
-#
 # See the README.md for more details. 
 #
 # The most interesting variables are the three at the top:
 #
 # $assetDir  - is the place where iCloud is saving files - shoudn't need changing
-# $stateFile - is where this script dumps state - probably don't want to be chanigng
+# $stateFile - is where this script dumps state - probably don't want to be changing
 #              this after you've started using the script. Killing this file will
 #              cause all files currently cached in $assetDir to be copied to $targetDir
 # $targetDir - Where the images will be copied to.
