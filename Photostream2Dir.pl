@@ -27,8 +27,8 @@ my $DEBUG = 0; # Set to 1 for some possibly useful output
 
 ### Edit these to suit ###
 my $assetDir = "$ENV{'HOME'}/Library/Application Support/iLifeAssetManagement/assets/sub/";
-my $stateFile = "$ENV{'HOME'}/.PhotostreamToDir/state";
-my $targetDir = "$ENV{'HOME'}/Pictures/LightroomWatchDir/";
+my $stateFile = "$ENV{'HOME'}/.PhotostreamToDir.state";
+my $targetDir = "$ENV{'HOME'}/Pictures/PhotoStream/";
 
 my %fileList;
 my @toProcess;

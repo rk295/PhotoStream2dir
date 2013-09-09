@@ -8,9 +8,6 @@
 	<integer>14400</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/lockrun</string>
-		<string>--lockfile=/Users/robin/tmp/var/backup-pictures.lockrun</string>
-		<string>--</string>
 		<string>/Users/robin/bin/Photostream2Dir.pl</string>
 	</array>
 </dict>

@@ -1,16 +1,17 @@
 # PhotoStream2Dir
 
 Simple perl script to walk the directory where osX currently saves PhotoStream [1]
-photos and copy them into a LightRoom auto import watch directory.
+photos and copy them into a directory. Currently I have Lightroom configured to 
+watch the target directory, which means I can have my PhotoStream photos automatically
+imported into Lightroom.
 
 Designed to be run from launchd or similar to copy any new files from $assetDir
-into $targetDir, which you can then do with what you want. For example you could
-use LightRoom autoimport feature.
+into $targetDir, which you can then do with what you want. 
 
-Saves state out to a file ($stateFile), which is a hash of the top level directory
-name and mtime thereof (incase it is useful in the future).  
+It saves state out to a file (as defined in the $stateFile variable), which is actually
+a perl hash of the top level directory name and mtime thereof (incase it is useful in the future).
 
-## The Asset Directory
+## The PhotoStream Asset Directory
 
 The $assetDir has the following structure:
 
@@ -40,17 +41,19 @@ I currently run this out of [launchd](http://developer.apple.com/library/mac/#do
 3. Load the new job
     
     `% launchctl load -w ~/Library/LaunchAgents/uk.org.riviera.PhotoStream2Dir.plist`
+
+### Lockrun
+
+Lockrun is a lovely little tool which runs the command you give it and writes out a lockfile. This 
+has the nice effect of preventing more than one copy of your program running at once. I installed 
+my copy of lockrun via the excellent [Homebrew](http://brew.sh/) tool.
 	
-## Notes
-
-1. I used to have Aperture enabled to auto-import PhotoStream pics. It has occurred to me that the only reason the files are piling up in the asset dir is because Aperture somehow made that happen. I need to do some more testing on a blank osX account to get to the root of what exactly starts making these files arrive in ~/Library....
-
 ## TODO
 
 1. Do something with PNG files, they tend to just be screen shots from iOS devices and as a result I currently skip over them.
 2. Some sort of locking mechanism maybe. Although I currently run under [Lockrun](http://www.unixwiz.net/tools/lockrun.html) 
+3. Some sort of logging to help debugging.
 
 
-
-r - $Date$
+r - 09/09/2013
 
