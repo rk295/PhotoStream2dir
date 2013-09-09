@@ -59,6 +59,10 @@ my copy of lockrun via the excellent [Homebrew](http://brew.sh/) tool.
 2. Some sort of locking mechanism maybe. Although I currently run under [Lockrun](http://www.unixwiz.net/tools/lockrun.html) 
 3. Some sort of logging to help debugging.
 
+# Contact
+
+If you want to contact me, ping me a mail at robin@kearney.co.uk or on twitter as [rk295](http://twitter.com/rk295/).
+
 
 r - 09/09/2013
 
