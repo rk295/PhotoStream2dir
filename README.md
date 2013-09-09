@@ -5,6 +5,11 @@ photos and copy them into a directory. Currently I have Lightroom configured to
 watch the target directory, which means I can have my PhotoStream photos automatically
 imported into Lightroom.
 
+*NOTE:* For this to work you have to enabled PhotoStream in the iCloud section of the 
+system preferences, which requires with iPhoto or Aperture installed. Once it is enabled
+however as far as I can tell you don't ever then need to run either app for the files
+to pile up in the directory under ~/Library/.
+
 Designed to be run from launchd or similar to copy any new files from $assetDir
 into $targetDir, which you can then do with what you want. 
 
