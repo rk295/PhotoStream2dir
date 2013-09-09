@@ -44,7 +44,7 @@ I currently run this out of [launchd](http://developer.apple.com/library/mac/#do
 
 ### Lockrun
 
-Lockrun is a lovely little tool which runs the command you give it and writes out a lockfile. This 
+[Lockrun](http://www.unixwiz.net/tools/lockrun.html) is a lovely little tool which runs the command you give it and writes out a lockfile. This 
 has the nice effect of preventing more than one copy of your program running at once. I installed 
 my copy of lockrun via the excellent [Homebrew](http://brew.sh/) tool.
 	
